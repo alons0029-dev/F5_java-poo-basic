@@ -1,17 +1,91 @@
 package org.example;
+import org.example.LyokoCharacter;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        LyokoCharacter Jeremie = new LyokoCharacter(
+                "Jeremie Belpois",
+                "Blond",
+                "Blue",
+                "Unknown",
+                "Unknown",
+                31,
+                1.47,
+                13
+        );
+        LyokoCharacter Aelita = new LyokoCharacter(
+                "Aelita Schaeffer",
+                "Bright pink",
+                "Dark green",
+                "Energy Fields",
+                "Second Sight, Petrification",
+                35,
+                1.45,
+                13
+        );
+        LyokoCharacter OddDR = new LyokoCharacter(
+                "Odd Della Robbia",
+                "Blond (with purple dye)",
+                "Brown",
+                "Laser Arrows",
+                "Shield",
+                32,
+                1.43,
+                13
+        );
+        LyokoCharacter Urlich = new LyokoCharacter(
+                "Ulrich Stern",
+                "Brown",
+                "Brown",
+                "Katana",
+                "Triplicate, Super Sprint",
+                45,
+                1.56,
+                13
+        );
+        LyokoCharacter Yumi = new LyokoCharacter(
+                "Yumi Ishiyama",
+                "Black",
+                "Brown",
+                "Tessen Fans",
+                "Telekinesis",
+                50,
+                1.65,
+                14
+        );
+        LyokoCharacter William = new LyokoCharacter(
+                "William Dunbar",
+                "Black",
+                "Navy Grey",
+                "Zwelhändler",
+                "Super Smoke, Energy Slash",
+                57,
+                1.70,
+                14
+        );
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        // JEREMIE
+        System.out.println(Jeremie.introduce());
+        System.out.println();
+
+        // AELITA
+        System.out.println(Aelita.introduce());
+        System.out.println();
+
+        // ODD
+        System.out.println(OddDR.introduce());
+        System.out.println();
+
+        // ULRICH
+        System.out.println(Urlich.introduce());
+        System.out.println();
+
+        // YUMI
+        System.out.println(Yumi.introduce());
+        System.out.println();
+
+        // WILLIAM
+        System.out.println(William.introduce());
+        System.out.println();
     }
 }
