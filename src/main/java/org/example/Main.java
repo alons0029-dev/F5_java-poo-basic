@@ -1,91 +1,186 @@
 package org.example;
-import org.example.LyokoCharacter;
+
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        LyokoCharacter Jeremie = new LyokoCharacter(
+
+        /* SETTING CHARACTERS */
+
+        // JEREMIE BELPOIS
+        Character Jeremie = new Character("Jeremie");
+
+        Human JeremieHuman = new Human(
+                Jeremie.shortName,
                 "Jeremie Belpois",
-                "Blond",
-                "Blue",
-                "Unknown",
-                "Unknown",
+                "blond",
+                "blue",
                 31,
                 1.47,
                 13
         );
-        LyokoCharacter Aelita = new LyokoCharacter(
+
+        // AELITA SCHAEFFER
+        Character Aelita = new Character("Aelita");
+
+        Human AelitaHuman = new Human(
+                Aelita.shortName,
                 "Aelita Schaeffer",
-                "Bright pink",
-                "Dark green",
-                "Energy Fields",
-                "Second Sight, Petrification",
+                "bright pink",
+                "dark green",
                 35,
                 1.45,
                 13
         );
-        LyokoCharacter OddDR = new LyokoCharacter(
+
+        LyokoWarrior AelitaWarrior = new LyokoWarrior(
+                Aelita.shortName,
+                "Energy Fields",
+                "Second Sight"
+        );
+
+        // ODD DELLA ROBBIA
+        Character OddDR = new Character("Odd");
+
+        Human OddDRHuman = new Human(
+                OddDR.shortName,
                 "Odd Della Robbia",
-                "Blond (with purple dye)",
-                "Brown",
-                "Laser Arrows",
-                "Shield",
+                "blond (dyed purple)",
+                "brown",
                 32,
                 1.43,
                 13
         );
-        LyokoCharacter Urlich = new LyokoCharacter(
+
+        LyokoWarrior OddDRWarrior = new LyokoWarrior(
+                OddDR.shortName,
+                "Laser Arrows",
+                "Shield"
+        );
+
+        // ULRICH STERN
+        Character Ulrich = new Character("Ulrich");
+
+        Human UlrichHuman = new Human(
+                Ulrich.shortName,
                 "Ulrich Stern",
-                "Brown",
-                "Brown",
-                "Katana",
-                "Triplicate, Super Sprint",
+                "brown",
+                "brown",
                 45,
                 1.56,
                 13
         );
-        LyokoCharacter Yumi = new LyokoCharacter(
+
+        LyokoWarrior UlrichWarrior = new LyokoWarrior(
+                Ulrich.shortName,
+                "Katana",
+                "Super Sprint"
+        );
+
+        // YUMI ISHIYAMA
+        Character Yumi = new Character("Yumi");
+
+        Human YumiHuman = new Human(
+                Yumi.shortName,
                 "Yumi Ishiyama",
-                "Black",
-                "Brown",
-                "Tessen Fans",
-                "Telekinesis",
+                "black",
+                "brown",
                 50,
                 1.65,
                 14
         );
-        LyokoCharacter William = new LyokoCharacter(
+
+        LyokoWarrior YumiWarrior = new LyokoWarrior(
+                Yumi.shortName,
+                "Tessen Fans",
+                "Telekinesis"
+        );
+
+        // WILLIAM DUNBAR
+        Character William = new Character("William");
+
+        Human WilliamHuman = new Human(
+                William.shortName,
                 "William Dunbar",
-                "Black",
-                "Navy Grey",
-                "Zwelhändler",
-                "Super Smoke, Energy Slash",
+                "black",
+                "navy grey",
                 57,
                 1.70,
                 14
         );
 
-        // JEREMIE
-        System.out.println(Jeremie.introduce());
+        LyokoWarrior WilliamWarrior = new LyokoWarrior(
+                William.shortName,
+                "Zwelhändler",
+                "Super Smoke"
+        );
+
+        /* CHARACTER SELECT */
+        Scanner characterSelect = new Scanner(System.in);
+
+        // Available Characters
+        System.out.println("Select your character:");
+        System.out.println("1 - " + JeremieHuman.getLongName());
+        System.out.println("2 - " + AelitaHuman.getLongName());
+        System.out.println("3 - " + OddDRHuman.getLongName());
+        System.out.println("4 - " + UlrichHuman.getLongName());
+        System.out.println("5 - " + YumiHuman.getLongName());
+        System.out.println("6 - " + WilliamHuman.getLongName());
         System.out.println();
 
-        // AELITA
-        System.out.println(Aelita.introduce());
-        System.out.println();
+        // Using Scanner
+        System.out.print("Enter character number here: ");
+        int selectedCharacter = characterSelect.nextInt();
 
-        // ODD
-        System.out.println(OddDR.introduce());
-        System.out.println();
-
-        // ULRICH
-        System.out.println(Urlich.introduce());
-        System.out.println();
-
-        // YUMI
-        System.out.println(Yumi.introduce());
-        System.out.println();
-
-        // WILLIAM
-        System.out.println(William.introduce());
-        System.out.println();
+        /* LOGIC */
+        switch (selectedCharacter) {
+            case 1:
+                System.out.println(JeremieHuman.introduce());
+                System.out.println();
+                System.out.println("I can't transform into Lyoko Warrior...");
+                break;
+            case 2:
+                System.out.println(AelitaHuman.introduce());
+                System.out.println();
+                System.out.println("I transform into Lyoko Warrior!");
+                System.out.println();
+                System.out.println("I use my weapon: " + AelitaWarrior.getWeapon());
+                System.out.println("I use my power: " + AelitaWarrior.getPower());
+                break;
+            case 3:
+                System.out.println(OddDRHuman.introduce());
+                System.out.println();
+                System.out.println("I transform into Lyoko Warrior!");
+                System.out.println();
+                System.out.println("I use my weapon: " + OddDRWarrior.getWeapon());
+                System.out.println("I use my power: " + OddDRWarrior.getPower());
+                break;
+            case 4:
+                System.out.println(UlrichHuman.introduce());
+                System.out.println();
+                System.out.println("I transform into Lyoko Warrior!");
+                System.out.println();
+                System.out.println("I use my weapon: " + UlrichWarrior.getWeapon());
+                System.out.println("I use my power: " + UlrichWarrior.getPower());
+                break;
+            case 5:
+                System.out.println(YumiHuman.introduce());
+                System.out.println();
+                System.out.println("I transform into Lyoko Warrior!");
+                System.out.println();
+                System.out.println("I use my weapon: " + YumiWarrior.getWeapon());
+                System.out.println("I use my power: " + YumiWarrior.getPower());
+                break;
+            case 6:
+                System.out.println(WilliamHuman.introduce());
+                System.out.println();
+                System.out.println("I transform into Lyoko Warrior!");
+                System.out.println();
+                System.out.println("I use my weapon: " + WilliamWarrior.getWeapon());
+                System.out.println("I use my power: " + WilliamWarrior.getPower());
+                break;
+            default:
+                System.out.println("Something went wrong, please try again.");
+        }
     }
 }
